@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int* pointer;
+    int n,i;
+    printf("Enter number of elements:");
+    scanf("%d"&n);
+    pointer=(int*)malloc(n*sizeof(int));
+    if (pointer==NULL){
+        printf("There is no Memory allocated to the pointer\n");
+    }
+    else{
+        printf("Memory successfult allocated to the pointer\n");
+        for(i=0;i<n;i++){
+            printf("Enter the value of first element:");
+            scanf("%d",&pointer[i]);
+        }
+    }
+    printf("The elements in the list are:\n");
+    for(i=0;i<n;i++){
+        printf("%d",pointer[i])
+    }
+}
