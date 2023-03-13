@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int *pointer;
+    int n,i;
+    pointer=(int*)calloc(n,sizeof(int));
+    printf("Enter number of elements:");
+    scanf("%d",&n);
+    if(pointer==NULL){
+        printf("Memory is not allocated\n");
+    }
+    else{
+        printf("Memory is successfully alocated\n");
+        for(i=0;i<n;i++){
+            printf("Enter the value of the element%d:",i+1);
+            scanf("%d",&pointer[i]);
+        }
+    }
+    printf("The elements in the pointer are:");
+    for(i=0;i<n;i++){
+        printf(" %d ",pointer[i]);
+    }
+}
