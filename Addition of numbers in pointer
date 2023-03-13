@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+
+{
+    int *ptr;
+    int i,n,a;
+    printf("Enter the number of integers: ");
+    scanf("%d", &n);
+    ptr = (int *) malloc(n * sizeof(int));
+    for (i = 0; i < n; i++) {\
+        printf("Enter value%d:",i+1);
+        scanf("%d", &ptr[i]);
+    }
+    for(i=0;i<n;i++){
+        a=a+p[i];
+    }
+    printf("The total value is:%d",a);
+    free(ptr);
+}
