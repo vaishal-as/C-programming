@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+
+{
+    int *ptr;
+    int i,j,n,a;
+    printf("Enter the number of integers: ");
+    scanf("%d", &n);
+    ptr = (int *) malloc(n * sizeof(int));
+    for (i = 0; i < n; i++) {\
+        printf("Enter value%d:",i+1);
+        scanf("%d", &ptr[i]);
+    }
+    for(i=0;i<n;i++){
+        for(j=1;j<n;j++){
+            if(ptr[i]>ptr[j]){
+                a=ptr[i];
+                ptr[i]=ptr[j];
+                ptr[j]=a;
+            }
+        }
+    }
+    printf("The smallest number is:%d",ptr[0]);
+    free(ptr);
+}
