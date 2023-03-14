@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main(){
+   FILE * file;
+   FILE * file1;
+   int a;
+   char str[100],str1[100];
+   file = fopen("program.txt", "w");
+   printf("Enter the content to enter in to the file:");
+   scanf("%s",str);
+   a=fputs(str,file);
+   fclose(file);
+   file1=fopen("program.txt","r");
+   while ((fscanf(file1,"%s",str1))!=EOF){
+        printf("%s",str1);
+   }
+   fclose(file1);
+}   
+  
