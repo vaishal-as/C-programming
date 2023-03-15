@@ -1,18 +1,28 @@
-#include <stdio.h>
+#include <iostream>
+
 int main(){
-   FILE * file;
-   FILE * file1;
-   int a;
-   char str[100],str1[100];
-   file = fopen("program.txt", "w");
-   printf("Enter the content to enter in to the file:");
-   scanf("%s",str);
-   a=fputs(str,file);
-   fclose(file);
-   file1=fopen("program.txt","r");
-   while ((fscanf(file1,"%s",str1))!=EOF){
-        printf("%s",str1);
-   }
-   fclose(file1);
-}   
-  
+    int n1;
+    float n2;
+    char rd;
+    std::cout << "Specify wheather you are entering the radious or diameter(r/d):";
+    std::cin >> rd;
+    if ( rd == 'R' || rd == 'r'){
+        std::cout << "Enter the radious of the circle in meters:";
+        std::cin >> n1;
+        n2= 3.14*(n1*n1);
+        std::cout << "The area of the circle is:" << n2 << " meter square " << std::endl;
+        return 0;
+    }
+    else if (rd == 'D' || rd == 'd'){
+        std::cout << "Enter the diameter of the circle:";
+        std::cin >> n1;
+        n1=n1/2;
+        n2= 3.14*(n1*n1);
+        std::cout << "The area of the circle is:" << n2 << " meter square " << std:: endl;
+        return 0;
+    }
+    else{
+        std::cout << "!!!Enter a valid input!!!" << std::endl <<"(either R or r else either D or d)" << std::endl;
+        return 0;
+    }
+}
